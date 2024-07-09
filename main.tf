@@ -1,20 +1,3 @@
-#use ubuntu 20 AMI for EC2 instance
-data "aws_ami" "ubuntu" {
-    most_recent = true
-
-    filter {
-        name = "name"
-        values = ["ubuntu/images/hvm-ssd/*20.04-amd64-server-*"]
-    }
-
-    filter {
-        name = "virtualization-type"
-        values = ["hvm"]
-    }
-
-    owners = ["099720109477"]
-}
-
 #region setting
 provider "aws" {
     region = "us-east-1"
@@ -22,7 +5,7 @@ provider "aws" {
 
 
 resource "aws_instance" "app_server" {
-    ami = data.aws_ami.ubuntu.id
+    ami = "ami-07c8c1b18ca66bb07"
     instance_type = "t2.micro"
     key_name = "ec2-ssh-key"
 
