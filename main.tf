@@ -5,7 +5,7 @@ provider "aws" {
 
 
 resource "aws_instance" "app_server" {
-    ami = "ami-07c8c1b18ca66bb07"
+    ami = "ami-04a81a99f5ec58529"
     instance_type = "t2.micro"
     key_name = "ec2-ssh-key"
 
