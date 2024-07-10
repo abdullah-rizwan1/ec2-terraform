@@ -35,6 +35,11 @@ jobs:
         id: apply
         env:
           TF_VAR_ec2_name: "${{github.event.inputs.ec2_name}}"
+          TF_VAR_aws_region: 'us-east-1'
+          TF_VAR_instance_subnet_id: ''
+          TF_VAR_instance_vpc_id: ""
+          TF_VAR_vpc_name: ''
+
         run: |
           terraform init
           terraform validate
