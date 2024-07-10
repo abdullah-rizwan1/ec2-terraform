@@ -27,6 +27,7 @@ jobs:
         uses: hashicorp/setup-terraform@v2
         with:
           terraform_wraper: false
+          default_value: 'default_value'
       - name: Create s3 bucket
         run:
           aws s3api create-bucket --bucket terraform-tfstate-bucket-905418336711 --region us-east-1
